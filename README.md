@@ -6,6 +6,6 @@ An attempt at imitating the pinch effect on canvas.
 
 Desired effect is the one in Gimp or glfx.js. Photoshop one is okay.
 
+```javascript
 pinch(canvas, x, y, radius, strength);
-
-Any help is appreciated.
+```
