@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" media="screen" href="" />
+		<style>
+			body {
+				background: gainsboro;
+			}
+			canvas {
+				box-shadow: 1px 1px 2px rgba(0,0,0,.2);
+			}
+		</style>
+	<head>
+<body>
+
+<table>
+	<tr>
+		<td>
+			<img id="image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEAAgMAAAAhHED1AAAACVBMVEUAAACIiIj////YRTzgAAAAh0lEQVR42u3UuQ0AIAwEQYuQ+qAf6qFKesABjwbJ6UbcxEy+GBElcfWGQO9l/5rAL4H3v3J6zjywBQEe8IAHAjzgAQ8EeMADHgjwgAc8EOABD3ggwAMe8ECABzzggQAPeMADAR7wgAcCPOABDwR4wAMeCPCABzwQ4AEPeCDAAx7wQMCcD815AcUZ2zmuCABLAAAAAElFTkSuQmCC">
+		</td>
+		<td>
+			<canvas id="canvas"></canvas>
+		</td>
+	</tr>
+</table>
+
+<script src="glfx.js"></script>
+<script>
+	var image	= document.getElementById("image");
+	
+	var canvas	= document.getElementById("canvas");
+	var context	= canvas.getContext("2d");
+	
+	canvas.width  = image.width;
+	canvas.height = image.height;
+	
+	var pinched	= fx.canvas();
+	var texture	= pinched.texture(image);
+	pinched.draw(texture).bulgePinch(canvas.width/2, canvas.height/2, canvas.width/2, -1).update();
+	
+	context.drawImage(pinched, 0, 0);
+</script>
+
+</body>
+</html>
