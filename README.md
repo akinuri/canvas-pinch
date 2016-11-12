@@ -12,3 +12,5 @@ function pinch(canvas, x, y, radius, strength) {
 	return pinchedCanvas;
 }
 ```
+
+![Pinch Effect Comparison](https://raw.githubusercontent.com/akinuri/canvas-pinch/master/pinched%20images/_comparison.jpg)
